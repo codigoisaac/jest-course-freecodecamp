@@ -1,14 +1,9 @@
 const fetchData = require("./action");
 
-test("the data is peanut butter", (done) => {
-  function callback(data) {
-    try {
-      expect(data).toBe("peanut butter");
-      done();
-    } catch {
-      done(error);
-    }
-  }
+test("the data is peanut butter", () => {
+  return expect(fetchData()).resolves.toBe("peanut butter");
+});
 
-  fetchData(callback);
+test("the fetch fails with an error", () => {
+  return expect(fetchData).rejects.toThrow("error");
 });
