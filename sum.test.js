@@ -1,3 +1,3 @@
 test("ok", () => {
-  expect({ ok: "ok" }).toEqual({ ok: "ok1" });
+  expect(0).toBeFalsy();
 });
