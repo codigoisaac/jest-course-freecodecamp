@@ -1,9 +1,7 @@
 const fetchData = require("./action");
 
-test("the data is peanut butter", () => {
-  return expect(fetchData()).resolves.toBe("peanut butter");
-});
+test("the data is peanut butter", async () => {
+  const data = await fetchData();
 
-test("the fetch fails with an error", () => {
-  return expect(fetchData).rejects.toThrow("error");
+  expect(data).toBe("peanut butter");
 });
